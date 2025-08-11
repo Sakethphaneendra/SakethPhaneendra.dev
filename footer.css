@@ -1,0 +1,306 @@
+.footer {
+    background: #1a1a1a;
+    pa.text-animation .letter {
+    display: inline-block;
+    cursor: default;
+    position: relative;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 450;
+    margin: 0 -0.02em; /* bring letters closer */
+    transform-origin: center;
+    transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: auto;
+}
+
+.text-animation:hover .letter {
+    animation: letterFloat 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--letter-index, 0));
+}
+
+@keyframes letterFloat {
+    0%, 100% {
+        transform: translateY(0) translateZ(0);
+    }
+    50% {
+        transform: translateY(-0.15em) translateZ(0.2em);
+    }
+}   color: #fff;
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10%;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.footer-cta {
+    font-size: 3rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto; 
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    line-height: 120%;
+    font-variation-settings: 'wght' 450;
+}
+
+/* --- CLEAN, SMOOTH RIPPLE TEXT ANIMATION --- */
+.text-animation {
+    display: inline-block;
+    position: relative;
+    letter-spacing: -0.1em; /* tighter spacing */
+    perspective: 1000px;
+}
+
+.text-animation .letter {
+    display: inline-block;
+    cursor: default;
+    position: relative;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0 -0.02em; /* bring letters closer */
+    transform-origin: center;
+    transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: auto;
+}
+
+/* Hovered letter */
+.text-animation .letter:hover {
+    font-weight: 800;
+    transform: scale(1.1) translateY(-0.02em);
+    z-index: 3;
+    transition-duration: 0.12s;
+}
+
+/* First neighbor */
+.text-animation .letter:hover + .letter,
+.text-animation .letter:has(+ .letter:hover) {
+    font-weight: 750;
+    transform: scale(1.05) translateY(-0.01em);
+    z-index: 2;
+    transition-delay: 0.01s;
+    transition-duration: 0.12s;
+}
+
+/* Second neighbor */
+.text-animation .letter:hover + .letter + .letter,
+.text-animation .letter:has(+ .letter + .letter:hover) {
+    font-weight: 700;
+    transform: scale(1.02);
+    z-index: 1;
+    transition-delay: 0.02s;
+    transition-duration: 0.12s;
+}
+
+/* Handle space margins */
+.text-animation .letter:has(+ .letter[innerHTML="&nbsp;"]) {
+    margin-right: 0.25em;
+}
+.text-animation .letter[innerHTML="&nbsp;"] + .letter {
+    margin-left: 0.25em;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .text-animation .letter {
+        margin: 0 -0.015em;
+    }
+    .text-animation .letter:hover {
+        transform: scale(1.1) translateY(-0.02em);
+    }
+    .text-animation .letter:hover + .letter,
+    .text-animation .letter:has(+ .letter:hover) {
+        transform: scale(1.05);
+    }
+}
+
+/* --- GET IN TOUCH BUTTON --- */
+.get-in-touch {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(128, 128, 128, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-top: 2%;
+
+}
+.get-in-touch .rocket {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    position: relative;
+    font-size: 1.2em;
+}
+
+.get-in-touch:hover {
+    background: rgba(255, 12, 12, 0.874);
+    transform: translateY(-2px);
+    text-align: c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.get-in-touch:hover .rocket {
+    animation: rocketLaunch 0.6s ease-in-out forwards;
+}
+
+@keyframes rocketLaunch {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(10px) translateY(-10px) rotate(15deg);
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(25px) translateY(-25px) rotate(30deg);
+        opacity: 0.8;
+    }
+    60% {
+        transform: translateX(45px) translateY(-45px) rotate(45deg);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateX(65px) translateY(-65px) rotate(60deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(85px) translateY(-85px) rotate(75deg);
+        opacity: 0;
+    }
+}
+
+/* Add particle effect behind rocket */
+.get-in-touch .rocket::after {
+    content: '✨';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.get-in-touch:hover .rocket::after {
+    opacity: 1;
+    animation: particleFade 0.6s ease-in-out infinite;
+}
+
+@keyframes particleFade {
+    0% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+    }
+}
+
+/* --- SOCIAL ICONS --- */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: #888;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.social-icon:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.footer-right {
+    text-align: right;
+    color: #888;
+    font-size: 0.9rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.made-with-love {
+    font-family: "Caveat", cursive;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.coffee-icon {
+    animation: wiggle 1s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.copyright {
+    color: #666;
+}
+
+/* --- MOBILE LAYOUT --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-cta {
+        font-size: 1.5rem;
+    }
+
+    .made-with-love {
+        justify-content: center;
+    }
+}

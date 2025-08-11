@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saketh Phaneendra.</title>
+
+    <!-- Google Fonts for Personal Life Section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Preload critical resources for LCP optimization -->
+    <link rel="preload" href="navbar.css" as="style">
+    <link rel="preload" href="homepage.css" as="style">
+    <link rel="preload" href="https://unpkg.com/feather-icons" as="script">
+    <link rel="stylesheet" href="footer.css">
+    <!-- Preload profile images to improve LCP -->
+    <link rel="preload" href="profile-img/image1.webp" as="image">
+    <link rel="preload" href="profile-img/image2.webp" as="image">
+
+    <!-- Critical CSS inline for fastest LCP -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #eaeef6;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            contain: layout style paint;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 100;
+            position: relative;
+            max-width: 900px;
+            padding: 3rem;
+            contain: layout style;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            contain: layout style;
+            margin-top: -10%;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            /* color: #4A6CF7; */
+            margin-bottom: 2rem;
+            font-weight: 400;
+            background: linear-gradient(90deg, #23004d, #2575fc);
+            /* Purple → Blue */
+            -webkit-background-clip: text;
+            /* Clips gradient to text */
+            -webkit-text-fill-color: transparent;
+            /* Makes actual text transparent */
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #718096;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Ensure profile elements are ready for LCP */
+        .desktop-profile-pic,
+        .mobile-profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 100%;
+            transition: transform 0.3s ease;
+            will-change: transform;
+            contain: layout style paint;
+        }
+
+        /* Reduce layout shift */
+        .navbar,
+        .mobile-navbar,
+        .desktop-side-controls {
+            position: fixed;
+            contain: layout style;
+        }
+
+        .floating-tech-icons {
+            position: absolute;
+            contain: layout style;
+        }
+
+        /* Critical navigation styles */
+        .navbar {
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .desktop-side-controls {
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .mobile-navbar {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        /* Prevent flash of unstyled content */
+        .skill-grid-cell {
+            min-height: 120px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Optimize animations */
+        * {
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+
+    <!-- Load non-critical CSS with media="print" and switch to screen after load -->
+    <link rel="stylesheet" href="navbar.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="homepage.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="Skills.css" media="print" onload="this.media='all'; this.onload=null;">
+
+    <!-- Fallback for no-JS -->
+    <noscript>
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="Skills.css">
+    </noscript>
+
+    <link rel="shortcut icon" href="/SP Logo.webp" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- The Update Banner -->
+
+
+    <nav class="navbar">
+        <div class="navbar__main">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link" data-tooltip="Home"><i data-feather="home"></i></a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link" data-tooltip="About"><i data-feather="user"></i></a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link" data-tooltip="Projects"><i data-feather="folder"></i></a>
+                </li>
+                <li class="navbar__item">
+<a href="#experience" class="navbar__link" data-tooltip="Experience">
+  <i data-feather="briefcase"></i>
+</a>                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Desktop Side Controls -->
+    <div class="desktop-side-controls">
+        <div class="desktop-profile-container">
+            <div class="desktop-profile-pic" id="desktop-profile" onclick="cycleProfileImage()">SP</div>
+            <div class="desktop-social-dropdown">
+                <a href="https://www.linkedin.com/in/sakethphaneendra/" class="desktop-social-link linkedin"
+                    target="_blank">
+                    <i data-feather="linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/saketh_phaneendra_/" class="desktop-social-link instagram"
+                    target="_blank">
+                    <i data-feather="instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://github.com/Sakethphaneendra" class="desktop-social-link github" target="_blank">
+                    <i data-feather="github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://leetcode.com/u/saketh_phaneendra_/" class="desktop-social-link leetcode"
+                    target="_blank">
+                    <i data-feather="code"></i>
+                    <span>LeetCode</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Theme Toggle (Right Side) -->
+    <!-- <button class="desktop-theme-toggle" onclick="toggleTheme()">
+        <i data-feather="sun" id="desktop-theme-icon"></i>
+    </button> -->
+
+    <!-- Mobile Top Controls -->
+
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-navbar">
+        <ul class="mobile-navbar__menu">
+            <li class="mobile-navbar__item">
+                <a href="#" class="mobile-navbar__link">
+                    <i data-feather="home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-navbar__item">
+                <a href="#" class="mobile-navbar__link">
+                    <i data-feather="user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-navbar__item">
+                <a href="#projects" class="mobile-navbar__link">
+                    <i data-feather="folder"></i>
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li class="mobile-navbar__item">
+                <a href="#" class="mobile-navbar__link">
+                    <i data-feather="file-text"></i>
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Floating Tech Icons -->
+
+        <div class="hero-content">
+            <h1 class="hero-title">Saketh Phaneendra</h1>
+            <p class="hero-subtitle">Software Engineering</p>
+            <p class="hero-description">
+                Passionate about creating beautiful, functional, and user-centered digital experiences.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#resume" class="cta-button resume-btn" id="resume-btn">
+                    <span class="btn-text">Resume</span>
+                    <i data-feather="download" class="download-icon"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="floating-tech-icons">
+            <div class="tech-icon tech-icon-1">
+                <i data-feather="code"></i>
+            </div>
+            <div class="tech-icon tech-icon-2">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" width="48" height="48">
+                    <circle r="2.05" fill="#61dafb" />
+                    <g stroke="#61dafb" stroke-width="1" fill="none">
+                        <ellipse rx="11" ry="4.2" />
+                        <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                        <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+                    </g>
+                </svg>
+
+            </div>
+            <div class="tech-icon tech-icon-3">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="64" height="64" role="img" aria-label="Vite logo">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#41D1FF"/>
+      <stop offset="100%" stop-color="#BD34FE"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEA83"/>
+      <stop offset="100%" stop-color="#FFA800"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer kite / shard -->
+  <path fill="url(#g1)"
+        d="M128 12
+           L28 208
+           L128 168
+           L228 208
+           L128 12 Z"/>
+
+  <!-- Inner accent shard (gives the layered look) -->
+  <path fill="rgba(255,255,255,0.06)"
+        d="M128 40
+           L58 200
+           L128 164
+           L198 200
+           L128 40 Z"/>
+
+  <!-- Solid lightning bolt centered and fully closed -->
+  <path fill="url(#g2)" stroke="rgba(0,0,0,0.06)" stroke-width="1"
+        d="M134 44
+           L98 140
+           L140 124
+           L112 212
+           L188 80
+           L150 96
+           L182 44
+           L134 44 Z"/>
+</svg>
+
+            </div>
+            <div class="tech-icon tech-icon-4">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Java Logo -->
+                    <path
+                        d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z"
+                        fill="#ED8B00" />
+                    <path
+                        d="M8 15.5C8 15.5 7 16.5 9 16.8C11.5 17.2 13.5 17.1 16.5 16.2C16.5 16.2 17 16.7 18 17C10.8 19.5 3.5 17.2 8 15.5Z"
+                        fill="#ED8B00" />
+                    <path
+                        d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
+                        fill="#5382A1" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-5">
+                <i data-feather="github"></i>
+            </div>
+            <!-- Additional right-side icons -->
+            <div class="tech-icon tech-icon-6">
+                <i data-feather="database"></i>
+            </div>
+            <div class="tech-icon tech-icon-7">
+                <i data-feather="cloud"></i>
+            </div>
+            <div class="tech-icon tech-icon-8">
+                <i data-feather="server"></i>
+            </div>
+            <!-- New icons -->
+            <div class="tech-icon tech-icon-9">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- CSS3 Logo -->
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6" />
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC" />
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-10">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- SCSS Logo -->
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" fill="#CF649A" />
+                    <path
+                        d="M18.5 14c-.5 1.5-2 2.5-3.5 2.5-1 0-1.5-.5-1.5-1 0-1 1-1.5 2.5-2s2.5-1 2.5-2.5c0-1.5-1-2.5-2.5-2.5-2 0-3 1-3 2.5h1c0-1 .5-1.5 1.5-1.5s1.5.5 1.5 1c0 .5-.5 1-1.5 1.5s-2.5 1-2.5 2.5c0 1.5 1 2.5 2.5 2.5 2 0 3-1 3.5-2.5h-1z"
+                        fill="white" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-11">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Vercel Logo -->
+                    <path d="M12 1L24 21H0L12 1Z" fill="#000000" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-12">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- VS Code Logo -->
+                    <path d="M17.5 2.5L23 5.5V18.5L17.5 21.5L1 16V8L17.5 2.5Z" fill="#007ACC" />
+                    <path d="M17.5 2.5V21.5L23 18.5V5.5L17.5 2.5Z" fill="#1F9CF0" />
+                    <path d="M17.5 6L7 12L17.5 18V6Z" fill="white" />
+                    <path d="M1 8L5 11L1 16V8Z" fill="white" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-13">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- LeetCode Logo -->
+                    <path
+                        d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
+                        fill="#FFA116" />
+                    <path d="M3 16H21V18H3V16Z" fill="#FFA116" />
+                    <circle cx="18" cy="17" r="2" fill="#FFA116" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Developer Todo List -->
+        <div class="dev-todo-list">
+            <div class="todo-header">
+                <i data-feather="check-square"></i>
+                <span>ToDo List</span>
+            </div>
+            <div class="todo-items" id="todo-items">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Left Side Terminal -->
+        <div class="code-terminal terminal-left">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn red"></span>
+                    <span class="btn yellow"></span>
+                    <span class="btn green"></span>
+                </div>
+                <div class="terminal-title">~/frontend/react-portfolio</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-content" id="terminal-content-left">
+                    <!-- Animated content -->
+                </div>
+                <div class="code-line">
+                    <span class="prompt">$</span>
+                    <span class="command" id="animated-command-left"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Terminal -->
+        <div class="code-terminal terminal-right">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn red"></span>
+                    <span class="btn yellow"></span>
+                    <span class="btn green"></span>
+                </div>
+                <div class="terminal-title">~/backend/api-server</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-content" id="terminal-content-right">
+                    <!-- Animated content -->
+                </div>
+                <div class="code-line">
+                    <span class="prompt">$</span>
+                    <span class="command" id="animated-command-right"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Small Mac Terminal Overlapping Left Terminal -->
+        <div class="mac-terminal">
+            <div class="mac-terminal-header">
+                <div class="mac-buttons">
+                    <span class="mac-btn red"></span>
+                    <span class="mac-btn yellow"></span>
+                    <span class="mac-btn green"></span>
+                </div>
+                <div class="mac-terminal-title">Portfolio</div>
+            </div>
+            <div class="mac-terminal-body">
+                <div class="mac-terminal-content" id="mac-terminal-content">
+                    <!-- Animated content will be added here -->
+                </div>
+                <div class="mac-code-line">
+                    <span class="mac-prompt">$</span>
+                    <span class="mac-command" id="mac-animated-command"></span>
+                    <span class="mac-cursor">|</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Only Small Terminals -->
+        <div class="mobile-terminal-1">
+            <i data-feather="terminal" class="mobile-terminal-icon"></i>
+        </div>
+        <div class="mobile-terminal-2">
+            <i data-feather="code" class="mobile-terminal-icon"></i>
+        </div>
+
+
+        <!-- Circular Text Animation -->
+        <!-- <div class="ellipse">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <path id="circle-path" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
+                </defs>
+                <text>
+                    <textPath href="#circle-path" startOffset="0%">
+                        Scroll Down • Explore • Projects • Work • 
+                    </textPath>
+                </text>
+            </svg>
+            Animated Arrow in Center -->
+        <!-- <div class="center-arrow">
+                <i data-feather="arrow-down"></i>
+            </div> -->
+        <!-- </div>  -->
+    </section>
+
+    <!-- Modern Dark Portfolio Section -->
+    <section class="dark-portfolio-section" id="projects">
+        <div class="stars-background"></div>
+        <div class="portfolio-container">
+
+            <h2 class="portfolio-title">My Latest Works</h2>
+
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-item" data-project="1">
+                    <a href="https://avishkar.academy/" target="_blank" class="project-link">
+                        <div class="project-number">01</div>
+                        <div class="project-content">
+                            <h3 class="project-name">Avishkar Academy</h3>
+                            <p class="project-tech">React • Node.js • MongoDB • Tailwind CSS • Vite • Vercel</p>
+                        </div>
+                        <div class="project-arrow">
+                            <i data-feather="arrow-right" class="arrow-rigt-side"></i>
+                        </div>
+                    </a>
+
+                    <!-- Floating Preview -->
+                    <div class="floating-preview">
+                        <div class="preview-card">
+                            <div class="preview-image">
+                                <img src="project-images/img1.webp" alt="E-Commerce Platform" loading="lazy">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item" data-project="2">
+                    <a href="https://quick-cart-theta-ten.vercel.app/" target="_blank" class="project-link">
+                        <div class="project-number">02</div>
+                        <div class="project-content">
+                            <h3 class="project-name">Quick Cart</h3>
+                            <p class="project-tech">React • Node.js • Clerk • Vercel</p>
+                        </div>
+                        <div class="project-arrow">
+                            <i data-feather="arrow-right" class="arrow-rigt-side"></i>
+                        </div>
+                    </a>
+
+                    <!-- Floating Preview -->
+                    <div class="floating-preview">
+                        <div class="preview-card">
+                            <div class="preview-image">
+                                <img src="project-images/img3.webp" alt="AI Task Manager" loading="lazy">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item" data-project="3">
+                    <a href="https://algo-vibs-yblf.vercel.app/" target="_blank" class="project-link">
+                        <div class="project-number">03</div>
+                        <div class="project-content">
+                            <h3 class="project-name">Algo Vibs</h3>
+                            <p class="project-tech">React • Bootstrap • Vercel • jsDelivr</p>
+                        </div>
+                        <div class="project-arrow">
+                            <i data-feather="arrow-right" class="arrow-rigt-side"></i>
+                        </div>
+                    </a>
+
+                    <!-- Floating Preview -->
+                    <div class="floating-preview">
+                        <div class="preview-card">
+                            <div class="preview-image">
+                                <img src="project-images/img4.webp" alt="Algo Vibs" loading="lazy">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item" data-project="4">
+                    <a href="https://wallet-wizard-zeta.vercel.app/" target="_blank" class="project-link">
+                        <div class="project-number">04</div>
+                        <div class="project-content">
+                            <h3 class="project-name">Wallet Wizard</h3>
+                            <p class="project-tech">React • Tailwind Css • Vercel </p>
+                        </div>
+                        <div class="project-arrow">
+                            <i data-feather="arrow-right" class="arrow-rigt-side"></i>
+                        </div>
+                    </a>
+
+                    <!-- Floating Preview -->
+                    <div class="floating-preview">
+                        <div class="preview-card">
+                            <div class="preview-image">
+                                <img src="project-images/img6.webp" alt="Real-time Chat App" loading="lazy">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-item" data-project="5">
+                    <a href="https://snap-qr-lime.vercel.app/" target="_blank" class="project-link">
+                        <div class="project-number">05</div>
+                        <div class="project-content">
+                            <h3 class="project-name">Snap Qr</h3>
+                            <p class="project-tech">MUI • Framer Motion • React • Vercel </p>
+                        </div>
+                        <div class="project-arrow">
+                            <i data-feather="arrow-right" class="arrow-rigt-side"></i>
+                        </div>
+                    </a>
+
+                    <!-- Floating Preview -->
+                    <div class="floating-preview">
+                        <div class="preview-card">
+                            <div class="preview-image">
+                                <img src="project-images/img5.webp" alt="Blockchain Voting System" loading="lazy">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid Section -->
+    <section class="skills-grid-section" id="about">
+        <div class="skills-wrapper">
+            <div class="skills-grid-container">
+                <div class="skills-pre-grid">
+                    <!-- Different sized Grid Cells -->
+                    <div class="skill-grid-cell large skills-development-cell">
+                        <div class="development-skills">
+                            <div class="skills-header">
+                                <h3 class="skills-heading">Development & Tools</h3>
+                                <span class="scroll-indicator">scroll down</span>
+                            </div>
+                            <div class="skills-list dev-skills-list">
+                                <div class="skill-item">JavaScript</div>
+                                <div class="skill-item">React.js</div>
+                                <div class="skill-item">Tailwind CSS</div>
+                                <div class="skill-item">MongoDB</div>
+                                <div class="skill-item">XAMPP</div>
+                                <div class="skill-item">SQL</div>
+                                <div class="skill-item">VS Code</div>
+                                <div class="skill-item">Git</div>
+                                <div class="skill-item">Github</div>
+                                <div class="skill-item">Clerk</div>
+                                <div class="skill-item">MongoDB Compass</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell ai-orb-cell">
+                        <div class="ai">
+                            <div class="container">
+                                <div class="c c4"></div>
+                                <div class="c c1"></div>
+                                <div class="c c2"></div>
+                                <div class="c c3"></div>
+
+                                <div class="rings">
+                                    <div class="rings"></div>
+                                </div>
+                            </div>
+                            <div class="glass"></div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell extra-wide skills-software-cell">
+                        <div class="software-skills">
+                            <div class="skills-header">
+                                <h3 class="skills-heading">Software Skills</h3>
+                                <span class="scroll-indicator">scroll down</span>
+                            </div>
+                            <div class="skills-list">
+                                <div class="skill-item">Java</div>
+                                <div class="skill-item">DSA</div>
+                                <div class="skill-item">Operating Systems</div>
+                                <div class="skill-item">DBMS</div>
+                                <div class="skill-item">Software Engineering</div>
+                                <div class="skill-item">Networking</div>
+                                <div class="skill-item">SQL</div>
+                                <div class="skill-item">Object-Oriented Programming</div>
+                                <div class="skill-item">Computer Networks</div>
+                                <div class="skill-item">System Design</div>
+                                <div class="skill-item">Database Design</div>
+                                <div class="skill-item">Software Testing</div>
+                                <div class="skill-item">Design Patterns</div>
+                                <div class="skill-item">Algorithms</div>
+                                <div class="skill-item">Data Structures</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell van-animation-cell">
+                        <div class="van-container">
+                            <div class="van">
+                                <img src="Skills1.webp" alt="Skills Van" class="van-image">
+                            </div>
+                        </div>
+                        <span class="cell-number">travelling</span>
+                    </div>
+                    <div class="skill-grid-cell tall skills-design-cell">
+                        <div class="design-skills">
+                            <div class="skills-header">
+                                <h3 class="skills-heading">Design & Creativity</h3>
+                                <span class="scroll-indicator">scroll down</span>
+                            </div>
+                            <div class="skills-list design-skills-list">
+                                <div class="skill-item">Figma</div>
+                                <div class="skill-item">Adobe Photoshop</div>
+                                <div class="skill-item">Canva</div>
+                                <div class="skill-item">Adobe XD</div>
+                                <div class="skill-item">Runway ML</div>
+                                <div class="skill-item">Jitter </div>
+                                <div class="skill-item">Designify </div>
+                                <div class="skill-item">Qwen </div>
+                                <div class="skill-item">Tasker Ai </div>
+                                <div class="skill-item">Notion </div>
+                                <div class="skill-item">Opal</div>
+                                <div class="skill-item">After Effects</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell wide skills-cell">
+                        <div id="text-tread-root"></div>
+                    </div>
+                    <div class="skill-grid-cell tall water-wave-cell">
+                        <canvas id="waterCanvas"></canvas>
+                        <span class="cell-number">Music </span>
+                    </div>
+                    <div class="skill-grid-cell large crab-cell">
+                        <span class="cell-number">❤</span>
+                        <div class="wrapper">
+                            <div class="container">
+                                <div class="crab">
+                                    <div class="hand">
+                                        <div class="claw-1-l"></div>
+                                        <div class="claw-1-r"></div>
+                                        <div class="claw-2-l"></div>
+                                        <div class="claw-2-r"></div>
+                                    </div>
+                                    <div class="mouth"></div>
+                                    <div class="legs-1"></div>
+                                    <div class="legs-2"></div>
+                                    <div class="eyes"></div>
+
+                                </div>
+                                <div class="crab-joke">
+                                    <span class="question"><span class="highlight">Saketh's Crab </span> fixes bugs and
+                                        <span class="highlight">steals his hearts 💘</span> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell keyboard-cell">
+                        <div class="keyboard">
+                            <button class="keyboard__key keyboard__key--meta" type="button" data-key="cmd">
+                                <span class="keyboard__key-lines">
+                                    <svg class="keyboard__cmd keyboard__key-line--tr" viewBox="0 0 16 16" width="16px"
+                                        height="16px" aria-hidden="true">
+                                        <path fill="none" stroke="currentcolor" stroke-width="2"
+                                            d="M5.7,10.3v2.3c0,1.3-1,2.3-2.3,2.3S1,14,1,12.7s1-2.3,2.3-2.3H5.7z M5.7,10.3h4.7 M5.7,10.3V5.7M10.3,10.3v2.3c0,1.3,1,2.3,2.3,2.3s2.3-1,2.3-2.3s-1-2.3-2.3-2.3H10.3z M10.3,10.3V5.7 M10.3,5.7H5.7 M10.3,5.7V3.3c0-1.3,1-2.3,2.3-2.3S15,2,15,3.3s-1,2.3-2.3,2.3H10.3z M5.7,5.7V3.3C5.7,2,4.6,1,3.3,1S1,2,1,3.3s1,2.3,2.3,2.3H5.7z" />
+                                    </svg>
+                                    <small
+                                        class="keyboard__key-line keyboard__key-line--small keyboard__key-line--br">command</small>
+                                </span>
+                            </button>
+                            <button class="keyboard__key" type="button" data-key="c">
+                                <span class="keyboard__key-lines">
+                                    <span class="keyboard__key-line">C</span>
+                                </span>
+                            </button>
+                            <button class="keyboard__key" type="button" data-key="v">
+                                <span class="keyboard__key-lines">
+                                    <span class="keyboard__key-line">V</span>
+                                </span>
+                            </button>
+                        </div>
+                        <span class="cell-number">Ai</span>
+                    </div>
+                    <div class="skill-grid-cell coding-terminal-cell">
+                        <div class="mini-terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-   ">
+                                    <span class="control-btn close"></span>
+                                    <span class="control-btn minimize"></span>
+                                    <span class="control-btn maximize"></span>
+                                </div>
+                                <div class="terminal-title">~/portfolio</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="code-line">
+                                    <span class="prompt">$</span>
+                                    <span class="typing-text" id="typing-code"></span>
+                                    <span class="cursor-blink">|</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-grid-cell extra-wide character-animation-cell">
+                        <div class="content">
+                            <h1 class="random">Saketh </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Lines for Cursor Effect -->
+            <div class="skills-grid-lines">
+                <div class="skills-grid-lines_cursor-position">
+                    <div class="skills-grid-lines_cursor"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <!-- Floating Tech Icons for Experience -->
+        <div class="floating-tech-icons experience-tech-icons">
+            <div class="tech-icon tech-icon-react">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- React Logo -->
+                    <path
+                        d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
+                        fill="#61DAFB" />
+                    <path d="M12 1C15.5 1 21 4 21 8.5C21 13 15.5 16 12 16C8.5 16 3 13 3 8.5C3 4 8.5 1 12 1Z"
+                        stroke="#61DAFB" stroke-width="1.5" fill="none" />
+                    <path d="M12 8C15.5 8 21 11 21 15.5C21 20 15.5 23 12 23C8.5 23 3 20 3 15.5C3 11 8.5 8 12 8Z"
+                        stroke="#61DAFB" stroke-width="1.5" fill="none" />
+                    <path d="M12 8C8.5 8 3 4 3 8.5C3 13 8.5 16 12 16C15.5 16 21 13 21 8.5C21 4 15.5 8 12 8Z"
+                        stroke="#61DAFB" stroke-width="1.5" fill="none" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-js">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- JavaScript Logo -->
+                    <rect width="24" height="24" fill="#F7DF1E" />
+                    <path
+                        d="M18.5 20.5C18.1 21.3 17.4 21.8 16.2 21.8C14.8 21.8 14 21.1 14 19.9V14H16V19.7C16 20.2 16.2 20.4 16.6 20.4C17 20.4 17.2 20.2 17.4 19.7L18.5 20.5Z"
+                        fill="#000" />
+                    <path
+                        d="M12 20.5C11.5 21.4 10.7 21.8 9.3 21.8C7.6 21.8 6.5 20.9 6.5 19.5C6.5 17.9 7.7 17.1 9.8 16.6L11 16.3V15.8C11 15.2 10.7 15 10.2 15C9.5 15 9.1 15.3 8.9 15.9L7.2 15.2C7.6 14.1 8.7 13.4 10.3 13.4C12.2 13.4 13.2 14.4 13.2 16V21.5H12Z"
+                        fill="#000" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-html">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- HTML5 Logo -->
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#E34F26" />
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#EF652A" />
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-css">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- CSS3 Logo -->
+                    <path d="M1.5 2L3 22L12 24L21 22L22.5 2H1.5Z" fill="#1572B6" />
+                    <path d="M12 4H20.5L19.5 20L12 22V4Z" fill="#33A9DC" />
+                    <path d="M12 8.5H16.5L16 13.5L12 14.5V17.5L17 16L18 8.5H12Z" fill="white" />
+                    <path d="M12 8.5V6H6L6.5 8.5H12Z" fill="white" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-java">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Java Logo -->
+                    <path
+                        d="M8.5 17.5C8.5 17.5 7.5 18.5 9.5 18.8C11.8 19.2 13 19 15.5 18.5C15.5 18.5 16.2 19.1 17.5 19.5C11 22 4 19.5 8.5 17.5Z"
+                        fill="#ED8B00" />
+                    <path
+                        d="M8 15.5C8 15.5 7 16.5 9 16.8C11.5 17.2 13.5 17.1 16.5 16.2C16.5 16.2 17 16.7 18 17C10.8 19.5 3.5 17.2 8 15.5Z"
+                        fill="#ED8B00" />
+                    <path
+                        d="M13.5 12C16 12.5 18.5 10.5 18.5 8.5C18.5 5.5 15 4 12 4C9 4 6.5 6 6.5 8.5C6.5 11 9 12 11.5 12H13.5Z"
+                        fill="#5382A1" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-vercel">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Vercel Logo -->
+                    <path d="M12 1L24 21H0L12 1Z" fill="#000000" />
+                </svg>
+            </div>
+            <div class="tech-icon tech-icon-git">
+                <i data-feather="git-branch" style="color: #F05032;"></i>
+            </div>
+        </div>
+
+        <div class="experience-container">
+            <h2 class="portfolio-title">
+                My Development<br>
+                Journey so far
+                <span class="experience-badge">Experience</span>
+            </h2>
+
+            <div class="experience-list">
+                <!-- Experience items will be added here -->
+                <div class="experience-item">
+                    <div class="experience-duration">Mar 25 - Jul 25</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Frontend Developer</h3>
+                        <h4 class="experience-company">krify</h4>
+                        <p class="experience-description">
+                            Frontend Developer in a MERN Stack Project – Built reusable UI components for an LMS
+                            platform. Led development, delivered in 3 months; now used by 20,000+ students. </p>
+                        <div class="experience-tech">React.js • JavaScript • CSS3 • Tailwind CSS • Git • GitHub • Node
+                            js </div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-duration">Sep 24 - Nov 24</div>
+                    <div class="experience-content">
+                        <h3 class="experience-title">Junior UI Designer & Developer</h3>
+                        <h4 class="experience-company">TechSavvy (Virtual Internship)</h4>
+                        <p class="experience-description">
+                            Created responsive web interfaces using Figma, HTML5, CSS3, JavaScript, and React.js.
+                            Converted design mockups into interactive components and optimized UI for better user
+                            engagement
+                        </p>
+                        <div class="experience-tech">CSS • Figma • PhotoShop • React • JavaScript • Bootstrap • Git
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Life Section -->
+    <section class="personal-life-section" id="personal-life">
+        <!-- Banner Content with SVGs next to text -->
+        <div class="banner-content banner-content-flex">
+            <div class="banner-svg">
+                <svg width="60" height="60" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_119_236)">
+                        <path
+                            d="M100.019 138.694C14.5644 254.761 -54.7168 185.48 61.3282 99.9966C-54.77 14.5263 14.5112 -54.7279 100.019 61.3122C185.473 -54.7678 254.754 14.5263 138.709 99.9966C254.701 185.48 185.42 254.761 100.019 138.694Z"
+                            fill="url(#paint0_linear_119_236)" />
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_119_236" x1="27.5" y1="19" x2="149" y2="174.5"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFD9A0" />
+                            <stop offset="1" stop-color="#FFF5F1" />
+                        </linearGradient>
+                        <clipPath id="clip0_119_236">
+                            <rect width="200" height="200" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="banner-text">
+                <h1 class="banner-title" style="text-align:center;">Life outside</h1>
+                <h2 class="banner-subtitle" style="text-align:center;">Pixels & Padding</h2>
+            </div>
+            <div class="banner-svgs">
+                <svg width="60" height="60" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_236_1056)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M100 0C72.3858 0 50 22.3858 50 50C22.3858 50 2.18557e-06 72.3858 0 100C0 127.614 22.3858 150 50 150C50 177.614 72.3858 200 100 200C127.614 200 150 177.614 150 150C177.614 150 200 127.614 200 100C200 72.3858 177.614 50 150 50C150 22.3858 127.614 0 100 0ZM140.306 59.6939C140.306 37.4334 122.26 19.3878 100 19.3878C77.7395 19.3878 59.6939 37.4334 59.6939 59.6939C37.4334 59.6939 19.3878 77.7395 19.3878 100C19.3878 122.26 37.4334 140.306 59.6939 140.306C59.6939 162.567 77.7395 180.612 100 180.612C122.26 180.612 140.306 162.567 140.306 140.306C162.567 140.306 180.612 122.26 180.612 100C180.612 77.7395 162.567 59.6939 140.306 59.6939ZM69.3878 69.3878C69.3878 52.4811 83.0933 38.7755 100 38.7755C116.907 38.7755 130.612 52.4811 130.612 69.3878C147.519 69.3878 161.224 83.0933 161.224 100C161.224 116.907 147.519 130.612 130.612 130.612C130.612 147.519 116.907 161.224 100 161.224C83.0933 161.224 69.3878 147.519 69.3878 130.612C52.4811 130.612 38.7755 116.907 38.7755 100C38.7755 83.0933 52.4811 69.3877 69.3878 69.3878Z"
+                            fill="url(#paint0_linear_236_1056)" />
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_236_1056" x1="14" y1="26" x2="179" y2="179.5"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E9B8FF" />
+                            <stop offset="1" stop-color="#F9ECFF" />
+                        </linearGradient>
+                        <clipPath id="clip0_236_1056">
+                            <rect width="200" height="200" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        <div class="personal-section-image-container">
+            <div class="psimage1"></div>
+            <div class="psimage2"></div>
+            <div class="psimage3"></div>
+            <div class="psimage4"></div>
+            <div class="psimage5"></div>
+            <div class="psimage6"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div>
+                    <h2 class="footer-cta">
+                        <span class="text-animation" data-text="Got an idea?">
+                            <span class="letter">G</span>
+                            <span class="letter">o</span>
+                            <span class="letter">t</span>
+                            <span class="letter">&nbsp;</span>
+                            <span class="letter">a</span>
+                            <span class="letter">n</span>
+                            <span class="letter">&nbsp;</span>
+                            <span class="letter">i</span>
+                            <span class="letter">d</span>
+                            <span class="letter">e</span>
+                            <span class="letter">a</span>
+                            <span class="letter">?</span>
+                        </span>
+                        <br>
+                        <span class="text-animation" data-text="Let's make it happen">
+                            <span class="letter">L</span>
+                            <span class="letter">e</span>
+                            <span class="letter">t</span>
+                            <span class="letter">'</span>
+                            <span class="letter">s</span>
+                            <span class="letter">&nbsp;</span>
+                            <span class="letter">m</span>
+                            <span class="letter">a</span>
+                            <span class="letter">k</span>
+                            <span class="letter">e</span>
+                            <span class="letter">&nbsp;</span>
+                            <span class="letter">i</span>
+                            <span class="letter">t</span>
+                            <span class="letter">&nbsp;</span>
+                            <span class="letter">h</span>
+                            <span class="letter">a</span>
+                            <span class="letter">p</span>
+                            <span class="letter">p</span>
+                            <span class="letter">e</span>
+                            <span class="letter">n</span>
+                        </span>
+                    </h2>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sakethphaneendra@gmail.com&su=Let%27s%20Build%20Something%20Awesome"
+                        target="_blank" class="get-in-touch">
+                        Get in Touch <span class="rocket">🚀</span>
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://instagram.com/saketh_phaneendra_" class="social-icon" target="_blank">
+                        <i data-feather="instagram"></i>
+                    </a>
+                    <a href="https://github.com/Sakethphaneendra" class="social-icon" target="_blank">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sakethphaneendra/" class="social-icon" target="_blank">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="made-with-love">
+                    Made with ❤️ & <br> Lots of Coffee <i data-feather="coffee" class="coffee-icon"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- All the Scripts Starts Here -->
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+
+
+
+
+
+    <!-- Load critical scripts early but don't block -->
+    <script>
+        // Early performance optimizations
+        const perfStart = performance.now();
+
+        // Performance monitoring
+        let lcpTime = 0;
+        let inpTime = 0;
+
+        // Monitor LCP
+        const lcpObserver = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            lcpTime = lastEntry.startTime;
+            console.log('LCP:', lcpTime);
+        });
+
+        try {
+            lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+        } catch (e) {
+            console.warn('LCP observer not supported');
+        }
+
+        // Monitor INP (using event timing as proxy)
+        const inpObserver = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            entries.forEach(entry => {
+                if (entry.duration > inpTime) {
+                    inpTime = entry.duration;
+                    console.log('Max INP duration:', inpTime);
+                }
+            });
+        });
+
+        try {
+            inpObserver.observe({ entryTypes: ['event'] });
+        } catch (e) {
+            console.warn('Event timing observer not supported');
+        }
+
+        // Debounced scroll handler for better INP
+        let scrollTimeout;
+        const debouncedScrollHandler = (handler) => {
+            return function () {
+                if (scrollTimeout) {
+                    cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = requestAnimationFrame(handler);
+            };
+        };
+
+        // Early profile image setup to improve LCP
+        function initProfileElements() {
+            const desktopProfile = document.getElementById('desktop-profile');
+            const mobileProfile = document.getElementById('mobile-profile');
+
+            if (desktopProfile) {
+                desktopProfile.textContent = 'SP';
+                desktopProfile.style.willChange = 'transform';
+            }
+            if (mobileProfile) {
+                mobileProfile.textContent = 'SP';
+                mobileProfile.style.willChange = 'transform';
+            }
+        }
+
+        // Initialize Cycling Notification Animations
+        let currentAnimationIndex = 0;
+        let lottieAnimation = null;
+        let animationLoadRetries = 0;
+        const maxRetries = 3;
+
+        // Array of notification animation files to cycle through
+        const animationFiles = [
+            'Notification-[remix].json',
+            'Notification-[remix] (1).json'
+        ];
+
+        // Backup animation files (smaller, more reliable)
+        const backupAnimationFiles = [
+            'Message 1.json' // Fallback to the working animation
+        ];
+
+        function initCyclingAnimations() {
+            const container = document.getElementById('lottie-animation');
+            if (!container) {
+                console.error('❌ Lottie container not found');
+                return;
+            }
+
+            // Ensure container has proper dimensions
+            const containerStyle = window.getComputedStyle(container);
+            const hasWidth = parseFloat(containerStyle.width) > 0;
+            const hasHeight = parseFloat(containerStyle.height) > 0;
+
+            if (!hasWidth || !hasHeight) {
+                console.warn('⚠️ Container dimensions not set properly, applying fallback');
+                container.style.width = '100%';
+                container.style.height = '100%';
+                container.style.minHeight = '200px';
+            }
+
+            console.log('🚀 Initializing cycling notification animations...');
+            console.log('📦 Container dimensions:', containerStyle.width, 'x', containerStyle.height);
+
+            // Check if lottie library is loaded
+            if (typeof lottie !== 'undefined') {
+                console.log('✅ Lottie library found, starting animation cycle...');
+                loadNextAnimation();
+            } else {
+                console.warn('⏳ Lottie library not loaded yet, retrying in 500ms...');
+                setTimeout(initCyclingAnimations, 500);
+            }
+        }
+
+        function loadNextAnimation() {
+            const container = document.getElementById('lottie-animation');
+            if (!container) return;
+
+            // Destroy existing animation
+            if (lottieAnimation) {
+                lottieAnimation.destroy();
+                lottieAnimation = null;
+            }
+
+            // Clear container
+            container.innerHTML = '';
+
+            const currentFile = animationFiles[currentAnimationIndex];
+            console.log(`🎬 Loading notification animation ${currentAnimationIndex + 1}: ${currentFile}`);
+
+            try {
+                // First, try to fetch the JSON to validate it
+                fetch(currentFile)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                        }
+                        return response.json();
+                    })
+                    .then(animationData => {
+                        // JSON is valid, load the animation
+                        console.log(`✅ JSON validated for ${currentFile}`);
+                        loadLottieAnimation(container, currentFile, animationData);
+                    })
+                    .catch(error => {
+                        console.error(`❌ JSON validation failed for ${currentFile}:`, error);
+                        handleAnimationError();
+                    });
+
+            } catch (error) {
+                console.error(`💥 Failed to initialize notification animation ${currentAnimationIndex + 1}:`, error);
+                handleAnimationError();
+            }
+        }
+
+        function loadLottieAnimation(container, filePath, animationData = null) {
+            try {
+                const loadOptions = {
+                    container: container,
+                    renderer: 'svg',
+                    loop: false, // Don't loop individual animations
+                    autoplay: true,
+                    rendererSettings: {
+                        preserveAspectRatio: 'xMidYMid meet',
+                        clearCanvas: true,
+                        progressiveLoad: false,
+                        hideOnTransparent: true
+                    }
+                };
+
+                // Use animationData if provided, otherwise use path
+                if (animationData) {
+                    loadOptions.animationData = animationData;
+                } else {
+                    loadOptions.path = filePath;
+                }
+
+                lottieAnimation = lottie.loadAnimation(loadOptions);
+
+                // Enhanced event handling
+                lottieAnimation.addEventListener('DOMLoaded', function () {
+                    console.log(`🎉 Notification animation ${currentAnimationIndex + 1} DOM loaded successfully`);
+                    animationLoadRetries = 0; // Reset retry counter on success
+                });
+
+                lottieAnimation.addEventListener('data_ready', function () {
+                    console.log(`📁 Notification animation ${currentAnimationIndex + 1} data ready`);
+                });
+
+                lottieAnimation.addEventListener('complete', function () {
+                    console.log(`✅ Notification animation ${currentAnimationIndex + 1} completed`);
+
+                    // Move to next animation after a brief pause
+                    setTimeout(() => {
+                        currentAnimationIndex = (currentAnimationIndex + 1) % animationFiles.length;
+                        loadNextAnimation();
+                    }, 1000); // 1 second pause between animations
+                });
+
+                lottieAnimation.addEventListener('error', function (error) {
+                    console.error(`❌ Lottie animation error for ${filePath}:`, error);
+                    handleAnimationError();
+                });
+
+                lottieAnimation.addEventListener('data_failed', function (error) {
+                    console.error(`❌ Failed to load animation data for ${filePath}:`, error);
+                    handleAnimationError();
+                });
+
+                // Global reference for debugging
+                window.lottieAnimation = lottieAnimation;
+
+                // Timeout fallback
+                setTimeout(() => {
+                    if (!lottieAnimation || !lottieAnimation.isLoaded) {
+                        console.warn(`⏰ Animation ${filePath} loading timeout`);
+                        handleAnimationError();
+                    }
+                }, 15000); // 15 seconds timeout
+
+            } catch (error) {
+                console.error(`💥 Lottie loading error for ${filePath}:`, error);
+                handleAnimationError();
+            }
+        }
+
+        function handleAnimationError() {
+            animationLoadRetries++;
+
+            if (animationLoadRetries < maxRetries) {
+                console.log(`🔄 Retrying animation load (attempt ${animationLoadRetries + 1}/${maxRetries})`);
+                setTimeout(() => {
+                    loadNextAnimation();
+                }, 2000);
+            } else if (backupAnimationFiles.length > 0) {
+                console.log('🔀 Switching to backup animation...');
+                animationLoadRetries = 0;
+                loadBackupAnimation();
+            } else {
+                console.log('❌ All animations failed, showing fallback content');
+                showNotificationFallback(document.getElementById('lottie-animation'));
+            }
+        }
+
+        function loadBackupAnimation() {
+            const container = document.getElementById('lottie-animation');
+            if (!container) return;
+
+            console.log('📦 Loading backup animation: Message 1.json');
+
+            try {
+                if (lottieAnimation) {
+                    lottieAnimation.destroy();
+                    lottieAnimation = null;
+                }
+
+                container.innerHTML = '';
+
+                lottieAnimation = lottie.loadAnimation({
+                    container: container,
+                    renderer: 'svg',
+                    loop: true, // Loop the backup animation
+                    autoplay: true,
+                    path: 'Message 1.json',
+                    rendererSettings: {
+                        preserveAspectRatio: 'xMidYMid meet',
+                        clearCanvas: true,
+                        progressiveLoad: false,
+                        hideOnTransparent: true
+                    }
+                });
+
+                lottieAnimation.addEventListener('DOMLoaded', function () {
+                    console.log('✅ Backup animation loaded successfully');
+                });
+
+                lottieAnimation.addEventListener('error', function () {
+                    console.error('❌ Backup animation also failed');
+                    showNotificationFallback(container);
+                });
+
+                window.lottieAnimation = lottieAnimation;
+
+            } catch (error) {
+                console.error('💥 Backup animation failed:', error);
+                showNotificationFallback(container);
+            }
+        }
+
+        // Enhanced fallback content function for notifications
+        function showNotificationFallback(container) {
+            console.log('🎨 Showing notification fallback content');
+            container.innerHTML = `
+                <div style="
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center; 
+                    height: 100%; 
+                    width: 100%;
+                    color: #fff; 
+                    font-size: 24px; 
+                    text-align: center; 
+                    flex-direction: column;
+                    font-weight: 600;
+                    background: rgba(0, 0, 0, 0.8);
+                    border-radius: 12px;
+                    padding: 20px;
+                    box-sizing: border-box;
+                ">
+                    <div style="
+                        margin-bottom: 16px; 
+                        font-size: 48px; 
+                        animation: bounce 2s infinite;
+                        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+                    ">�</div>
+                    <div style="
+                        margin-bottom: 8px; 
+                        font-size: 20px;
+                        letter-spacing: 1px;
+                    ">Notification Cycle</div>
+                    <div style="
+                        font-size: 12px; 
+                        opacity: 0.6; 
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                    ">Loading Animations...</div>
+                </div>
+                <style>
+                    @keyframes bounce {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-10px); }
+                    }
+                </style>
+            `;
+
+            // Try to continue the cycle after showing fallback
+            setTimeout(() => {
+                currentAnimationIndex = (currentAnimationIndex + 1) % animationFiles.length;
+                loadNextAnimation();
+            }, 3000);
+        }
+
+        // Initialize as soon as DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initProfileElements);
+        } else {
+            initProfileElements();
+        }
+
+        // Report performance metrics after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('📊 Performance Report:');
+                console.log('- Page Load Time:', performance.now() - perfStart, 'ms');
+                console.log('- LCP Time:', lcpTime, 'ms');
+                console.log('- Max INP Duration:', inpTime, 'ms');
+
+                // Check if we're meeting targets
+                if (lcpTime > 2500) {
+                    console.warn('⚠️ LCP exceeds 2.5s target');
+                }
+                if (inpTime > 200) {
+                    console.warn('⚠️ INP exceeds 200ms target');
+                }
+            }, 1000);
+
+            // Initialize auto-scroll for skills list
+            initSkillsAutoScroll();
+
+            // Initialize cycling notification animations with delay to ensure DOM is ready
+            setTimeout(() => {
+                console.log('🎬 Starting cycling notification animations...');
+                initCyclingAnimations();
+            }, 1500);
+
+            // Add debug controls to window for testing
+            window.debugNotifications = {
+                restart: () => {
+                    console.log('🔄 Restarting notification cycle...');
+                    currentAnimationIndex = 0;
+                    animationLoadRetries = 0;
+                    initCyclingAnimations();
+                },
+                next: () => {
+                    console.log('⏭️ Skipping to next notification...');
+                    currentAnimationIndex = (currentAnimationIndex + 1) % animationFiles.length;
+                    loadNextAnimation();
+                },
+                previous: () => {
+                    console.log('⏮️ Going to previous notification...');
+                    currentAnimationIndex = (currentAnimationIndex - 1 + animationFiles.length) % animationFiles.length;
+                    loadNextAnimation();
+                },
+                loadBackup: () => {
+                    console.log('📦 Loading backup animation...');
+                    loadBackupAnimation();
+                },
+                testJSON: async () => {
+                    console.log('🧪 Testing JSON files...');
+                    for (let i = 0; i < animationFiles.length; i++) {
+                        try {
+                            const response = await fetch(animationFiles[i]);
+                            if (response.ok) {
+                                const json = await response.json();
+                                console.log(`✅ ${animationFiles[i]}: Valid JSON (${Object.keys(json).length} properties)`);
+                            } else {
+                                console.error(`❌ ${animationFiles[i]}: HTTP ${response.status}`);
+                            }
+                        } catch (error) {
+                            console.error(`❌ ${animationFiles[i]}: ${error.message}`);
+                        }
+                    }
+                },
+                info: () => {
+                    console.log('📊 Current notification info:', {
+                        currentIndex: currentAnimationIndex,
+                        currentFile: animationFiles[currentAnimationIndex],
+                        totalAnimations: animationFiles.length,
+                        retries: animationLoadRetries,
+                        maxRetries: maxRetries,
+                        isLoaded: window.lottieAnimation ? window.lottieAnimation.isLoaded : false,
+                        isPaused: window.lottieAnimation ? window.lottieAnimation.isPaused : false
+                    });
+                },
+                setSpeed: (speed) => {
+                    if (window.lottieAnimation) {
+                        window.lottieAnimation.setSpeed(speed);
+                        console.log('⚡ Animation speed set to:', speed);
+                    }
+                }
+            };
+
+            console.log('🛠️ Debug commands available:');
+            console.log('  - window.debugNotifications.restart()');
+            console.log('  - window.debugNotifications.testJSON()');
+            console.log('  - window.debugNotifications.loadBackup()');
+            console.log('  - window.debugNotifications.info()');;
+        });
+
+        // Auto-scroll animation for skills list
+        function initSkillsAutoScroll() {
+            const skillsList = document.querySelector('.skills-list');
+            const skillsCell = document.querySelector('.skills-software-cell');
+            const devSkillsList = document.querySelector('.dev-skills-list');
+            const devSkillsCell = document.querySelector('.skills-development-cell');
+            const designSkillsList = document.querySelector('.design-skills-list');
+            const designSkillsCell = document.querySelector('.skills-design-cell');
+
+            // Initialize software skills auto-scroll
+            if (skillsList && skillsCell) {
+                initCellAutoScroll(skillsList, skillsCell, 'software');
+            }
+
+            // Initialize development skills auto-scroll
+            if (devSkillsList && devSkillsCell) {
+                initCellAutoScroll(devSkillsList, devSkillsCell, 'development');
+            }
+
+            // Initialize design skills auto-scroll
+            if (designSkillsList && designSkillsCell) {
+                initCellAutoScroll(designSkillsList, designSkillsCell, 'design');
+            }
+        }
+
+        function initCellAutoScroll(skillsList, skillsCell, cellType) {
+            let scrollDirection = 1; // 1 for down, -1 for up
+            let currentPosition = 0;
+            let isUserScrolling = false;
+            let isHovering = false;
+            let userScrollTimeout;
+            let hoverScrollInterval;
+
+            // Pause auto-scroll when user interacts
+            skillsList.addEventListener('wheel', () => {
+                isUserScrolling = true;
+                clearTimeout(userScrollTimeout);
+                userScrollTimeout = setTimeout(() => {
+                    isUserScrolling = false;
+                }, 3000); // Resume after 3 seconds
+            });
+
+            skillsList.addEventListener('touchstart', () => {
+                isUserScrolling = true;
+                clearTimeout(userScrollTimeout);
+                userScrollTimeout = setTimeout(() => {
+                    isUserScrolling = false;
+                }, 3000);
+            });
+
+            // Enhanced hover functionality
+            skillsCell.addEventListener('mouseenter', () => {
+                isHovering = true;
+                startHoverScroll();
+            });
+
+            skillsCell.addEventListener('mouseleave', () => {
+                isHovering = false;
+                stopHoverScroll();
+            });
+
+            function startHoverScroll() {
+                if (hoverScrollInterval) clearInterval(hoverScrollInterval);
+
+                let hoverDirection = 1;
+                let hoverPosition = skillsList.scrollTop;
+                const maxScroll = skillsList.scrollHeight - skillsList.clientHeight;
+
+                hoverScrollInterval = setInterval(() => {
+                    if (!isHovering || isUserScrolling) return;
+
+                    // Smooth easing function
+                    const easeInOut = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                    hoverPosition += hoverDirection * 1.5; // Smooth scroll speed
+
+                    // Change direction at boundaries with easing
+                    if (hoverPosition >= maxScroll) {
+                        hoverDirection = -1;
+                        hoverPosition = maxScroll;
+                    } else if (hoverPosition <= 0) {
+                        hoverDirection = 1;
+                        hoverPosition = 0;
+                    }
+
+                    skillsList.scrollTo({
+                        top: hoverPosition,
+                        behavior: 'smooth'
+                    });
+                }, 50); // Smooth 20fps
+            }
+
+            function stopHoverScroll() {
+                if (hoverScrollInterval) {
+                    clearInterval(hoverScrollInterval);
+                    hoverScrollInterval = null;
+                }
+            }
+
+            function autoScroll() {
+                if (isUserScrolling || isHovering) {
+                    requestAnimationFrame(autoScroll);
+                    return;
+                }
+
+                const maxScroll = skillsList.scrollHeight - skillsList.clientHeight;
+
+                if (maxScroll <= 0) {
+                    requestAnimationFrame(autoScroll);
+                    return;
+                }
+
+                currentPosition += scrollDirection * 0.5; // Slow, smooth scroll
+
+                // Change direction at boundaries
+                if (currentPosition >= maxScroll) {
+                    // Pause at bottom then restart from top
+                    setTimeout(() => {
+                        if (!isUserScrolling && !isHovering) {
+                            skillsList.scrollTo({ top: 0, behavior: 'smooth' });
+                            currentPosition = 0;
+                        }
+                    }, 1500);
+                    currentPosition = maxScroll;
+                }
+
+                if (currentPosition <= 0) {
+                    currentPosition = 0;
+                    scrollDirection = 1;
+                }
+
+                skillsList.scrollTop = currentPosition;
+                requestAnimationFrame(autoScroll);
+            }
+
+            // Start auto-scroll after a brief delay
+            setTimeout(() => {
+                autoScroll();
+            }, 2000 + (cellType === 'development' ? 500 : cellType === 'design' ? 1000 : 0)); // Stagger start times
+        }
+
+        // Initialize Keyboard Component
+        function initKeyboard() {
+            const keyboardKeys = document.querySelectorAll('.keyboard__key');
+
+            keyboardKeys.forEach(key => {
+                // Add click animation
+                key.addEventListener('click', function () {
+                    this.classList.add('active');
+                    setTimeout(() => {
+                        this.classList.remove('active');
+                    }, 150);
+                });
+
+                // Add keyboard event listeners
+                const keyData = key.getAttribute('data-key');
+                if (keyData) {
+                    document.addEventListener('keydown', function (e) {
+                        let keyPressed = '';
+
+                        if (e.key === 'Meta' || e.key === 'Cmd') {
+                            keyPressed = 'cmd';
+                        } else {
+                            keyPressed = e.key.toLowerCase();
+                        }
+
+                        if (keyPressed === keyData) {
+                            key.classList.add('active');
+                        }
+                    });
+
+                    document.addEventListener('keyup', function (e) {
+                        let keyPressed = '';
+
+                        if (e.key === 'Meta' || e.key === 'Cmd') {
+                            keyPressed = 'cmd';
+                        } else {
+                            keyPressed = e.key.toLowerCase();
+                        }
+
+                        if (keyPressed === keyData) {
+                            key.classList.remove('active');
+                        }
+                    });
+                }
+            });
+
+            // Special combination detection (Cmd+C, Cmd+V)
+            let cmdPressed = false;
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Meta' || e.key === 'Cmd') {
+                    cmdPressed = true;
+                }
+
+                // Cmd+C combination
+                if (cmdPressed && e.key.toLowerCase() === 'c') {
+                    console.log('🔄 Copy command detected!');
+                    // Add visual feedback
+                    const cmdKey = document.querySelector('[data-key="cmd"]');
+                    const cKey = document.querySelector('[data-key="c"]');
+
+                    if (cmdKey && cKey) {
+                        cmdKey.style.background = '#4CAF50';
+                        cKey.style.background = '#4CAF50';
+
+                        setTimeout(() => {
+                            cmdKey.style.background = '';
+                            cKey.style.background = '';
+                        }, 300);
+                    }
+                }
+
+                // Cmd+V combination
+                if (cmdPressed && e.key.toLowerCase() === 'v') {
+                    console.log('📋 Paste command detected!');
+                    // Add visual feedback
+                    const cmdKey = document.querySelector('[data-key="cmd"]');
+                    const vKey = document.querySelector('[data-key="v"]');
+
+                    if (cmdKey && vKey) {
+                        cmdKey.style.background = '#2196F3';
+                        vKey.style.background = '#2196F3';
+
+                        setTimeout(() => {
+                            cmdKey.style.background = '';
+                            vKey.style.background = '';
+                        }, 300);
+                    }
+                }
+            });
+
+            document.addEventListener('keyup', function (e) {
+                if (e.key === 'Meta' || e.key === 'Cmd') {
+                    cmdPressed = false;
+                }
+            });
+        }
+
+        // Initialize keyboard when DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(initKeyboard, 1000);
+        });
+
+        // Initialize Water Wave Animation
+        function initWaterWaveAnimation() {
+            const canvas = document.getElementById('waterCanvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas size to fit the cell
+            const cellRect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = cellRect.width;
+            canvas.height = cellRect.height;
+
+            const waves = [];
+            const waveCount = 25;
+
+            for (let i = 0; i < waveCount; i++) {
+                waves.push({
+                    y: (canvas.height / 2) - 100 + Math.random() * 200, // 中央付近に分布
+                    length: 0.01 + Math.random() * 0.001,
+                    amplitude: 50 + Math.random() * 100,
+                    frequency: 0.01 + Math.random() * 0.03,
+                    phase: Math.random() * Math.PI * 2
+                });
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.03)'; // 透明度を0.1に調整
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                waves.forEach((wave, index) => {
+                    ctx.beginPath();
+                    ctx.moveTo(0, wave.y);
+                    for (let i = 0; i < canvas.width; i++) {
+                        const yOffset = Math.sin(i * wave.length + wave.phase) * wave.amplitude * Math.sin(wave.phase);
+                        ctx.lineTo(i, wave.y + yOffset);
+                    }
+                    ctx.strokeStyle = `hsl(${index / 2 + 170}, 100%, 50%)`;
+                    ctx.stroke();
+                    wave.phase += wave.frequency;
+                });
+            }
+
+            animate();
+
+            // Handle window resize
+            function handleResize() {
+                const cellRect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = cellRect.width;
+                canvas.height = cellRect.height;
+                waves.forEach((wave) => {
+                    wave.y = (canvas.height / 2) - 100 + Math.random() * 200; // 中央付近に再配置
+                });
+            }
+
+            window.addEventListener('resize', handleResize);
+        }
+
+        // Initialize water wave animation when DOM is ready
+        window.addEventListener('load', function () {
+            setTimeout(initWaterWaveAnimation, 500);
+
+            // Initialize character animation
+            setTimeout(initCharacterAnimation, 1000);
+
+            // Initialize coding terminal typing animation
+            setTimeout(initCodingTerminal, 1500);
+        });
+
+        // Character Animation System
+        function initCharacterAnimation() {
+            var RandomCharacterAnimation = function (options) {
+                var defaults = {
+                    d_element: '',
+                    d_type: 'char',
+                    d_min: 10,
+                    d_max: 100,
+                    d_kerning: 10,
+                }
+
+                this.size;
+                this.getLettersArray = [];
+                this.getLettersChanges = [];
+                this.kerningSize = [];
+                this.currentChange = 0;
+                this.char = 'abcdefghijklmnopqrstuvwxyz0123456789!?*()@£$%^&_-+=[]{}:;\'"\\|<>,./~`×';
+                this.charArray = [];
+                this.requestId;
+
+                if (arguments[0] && typeof arguments[0] === "object") {
+                    this.options = _extendDefaults(defaults, arguments[0]);
+                }
+            }
+
+            function _extendDefaults(source, properties) {
+                var property;
+                for (property in properties) {
+                    if (properties.hasOwnProperty(property)) {
+                        source[property] = properties[property];
+                    }
+                }
+                return source;
+            }
+
+            RandomCharacterAnimation.prototype = {
+                _random: function (minNb, maxNb) {
+                    return Math.floor(Math.random() * (maxNb - minNb) + minNb);
+                },
+
+                _getElementSize: function () {
+                    var i, thisLetter;
+                    var element_selected = document.querySelector(this.options.d_element).textContent;
+
+                    for (i in element_selected) {
+                        thisLetter = element_selected[i];
+                        this.getLettersArray.push(thisLetter);
+                    }
+                    return this.getLettersArray;
+                },
+
+                _setStructure: function () {
+                    var element = document.querySelector(this.options.d_element);
+                    element.innerHTML = '';
+
+                    var i, j, characterContainer, thisContainer, array, kerningSize;
+
+                    for (i in this.getLettersArray) {
+                        characterContainer = document.createElement('span');
+                        array = this.getLettersArray[i];
+
+                        if (array === ' ') {
+                            characterContainer.innerHTML = '&nbsp';
+                        }
+
+                        characterContainer.classList.add('randomCharacter');
+                        element.appendChild(characterContainer);
+
+                        var letter = document.createTextNode(array);
+                        characterContainer.appendChild(letter);
+                        characterContainer.style.opacity = '0';
+                    }
+                },
+
+                _setKerning: function () {
+                    var kerning = this.options.d_kerning;
+                    var elem = document.querySelector(this.options.d_element);
+
+                    var i, j, thisContainer, array, kerningSize;
+
+                    for (i = 0; i < this.getLettersArray.length; i++) {
+                        j = i + 1;
+                        thisContainer = elem.querySelector('.randomCharacter:nth-child(' + j + ')');
+                        thisContainer.style.padding = '0' + (Math.sqrt(kerning) / thisContainer.offsetWidth) + 'px';
+                        kerningSize = thisContainer.offsetWidth;
+                        this.kerningSize.push(kerningSize);
+                        thisContainer.style.width = kerningSize + 'px';
+                    }
+                },
+
+                _convertStringToArray: function (charType) {
+                    var i, thisChar;
+                    for (i = 0; i < this.char.length; i++) {
+                        thisChar = this.char[i];
+                        this.charArray.push(thisChar);
+                    }
+                },
+
+                _setChange: function () {
+                    var i, setChange;
+
+                    for (i in this.getLettersArray) {
+                        setChange = this._random(this.options.d_min, this.options.d_max);
+                        this.getLettersChanges.push(setChange);
+                    }
+                },
+
+                _generateRandomCharacter: function () {
+                    var charType = this.options.d_type;
+                    var elem = document.querySelector(this.options.d_element);
+
+                    this.currentChange++;
+
+                    var chooseRandomLetter = this._random(0, this.getLettersArray.length);
+                    var generateContent, setContent, getChar;
+                    var changesPlaces = elem.querySelector('.randomCharacter:nth-child(' + (chooseRandomLetter + 1) + ')');
+
+                    if (charType === 'int') {
+                        generateContent = this._random(0, 9);
+                    } else if (charType === 'char') {
+                        getChar = this._random(0, this.charArray.length);
+                        generateContent = this.charArray[getChar];
+                    } else {
+                        getChar = this._random(0, charType.length);
+                        generateContent = charType[getChar];
+                    }
+
+                    changesPlaces.innerHTML = generateContent;
+                    changesPlaces.style.opacity = '1';
+                    elem.style.opacity = '1'
+                },
+
+                _checkNbChanges: function () {
+                    var i, j, k, thisChar, setContent, thisContainer;
+                    var elem = document.querySelector(this.options.d_element);
+
+                    for (i = 0; i < this.getLettersArray.length; i++) {
+                        j = i + 1;
+                        thisChar = this.getLettersChanges[i];
+                        thisContainer = elem.querySelector('.randomCharacter:nth-child(' + j + ')');
+                        setContent = this.getLettersArray[i];
+
+                        if (this.currentChange > thisChar) {
+                            thisContainer.innerHTML = setContent;
+                        }
+                    }
+                },
+
+                _loop: function () {
+                    var self = this;
+
+                    this.requestId = requestAnimationFrame(function () {
+                        self._loop();
+
+                        if (self.currentChange > self.options.d_max) {
+                            self.stop();
+                        }
+                    });
+
+                    self._generateRandomCharacter(self.options.d_type);
+                    self._checkNbChanges();
+                },
+
+                restart: function () {
+                    this.currentChange = 0;
+                    this._setChange();
+                    this._loop();
+                },
+
+                start: function () {
+                    this._getElementSize();
+                    this._setStructure();
+                    this._setKerning();
+                    this._setChange();
+                    this._convertStringToArray();
+
+                    this._loop();
+                },
+
+                stop: function () {
+                    window.cancelAnimationFrame(this.requestId);
+                }
+            };
+
+            // Initialize the main title animation
+            var title = new RandomCharacterAnimation({
+                d_element: '.random',
+                d_kerning: 8000,
+            });
+
+            title.start();
+
+            // Restart animation every 4 seconds
+            setInterval(function () {
+                title.restart();
+            }, 4000);
+        }
+
+        // Coding Terminal Typing Animation
+        function initCodingTerminal() {
+            const typingElement = document.getElementById('typing-code');
+            if (!typingElement) return;
+
+            const codeSnippets = [
+                'npm install portfolio',
+                'git commit -m "Added skills"',
+                'console.log("Hello World!");',
+                'const dev = new Developer();',
+                'import React from "react";',
+                'function createApp() {...}',
+                'npm run build',
+                'git push origin main',
+                'docker build -t app .',
+                'yarn start'
+            ];
+
+            let currentSnippetIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentSnippet = codeSnippets[currentSnippetIndex];
+
+                if (isDeleting) {
+                    typingElement.textContent = currentSnippet.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                } else {
+                    typingElement.textContent = currentSnippet.substring(0, currentCharIndex + 1);
+                    currentCharIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 50 : 100;
+
+                if (!isDeleting && currentCharIndex === currentSnippet.length) {
+                    typeSpeed = 2000; // Pause at end
+                    isDeleting = true;
+                } else if (isDeleting && currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
+                    typeSpeed = 500; // Pause before starting new snippet
+                }
+
+                setTimeout(typeWriter, typeSpeed);
+            }
+
+            typeWriter();
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js" defer></script>
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/css-doodle@0.34.6/css-doodle.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

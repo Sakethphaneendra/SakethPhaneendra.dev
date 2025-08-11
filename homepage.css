@@ -1,0 +1,462 @@
+/* Smooth rotation animation for banner SVGs */
+.banner-svgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Container */
+  /* Container */
+  .personal-section-image-container {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -40px; /* Overlapping effect */
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  /* Common Frame Styles */
+  .psimage {
+    
+    width: 180px;
+    height: 220px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 10px solid white;
+    border-bottom: 30px solid white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  /* Alternate tilts */
+  .psimage1 { background-image: url('ps-img/spimg1.webp'); transform: rotate(-6deg); z-index: 1; }
+  .psimage2 { background-image: url('ps-img/spimg2.webp'); transform: rotate(4deg); z-index: 2; }
+  .psimage3 { background-image: url('ps-img/spimg3.webp'); transform: rotate(-3deg); z-index: 3; }
+  .psimage4 { background-image: url('ps-img/spimg4.webp'); transform: rotate(5deg); z-index: 4; }
+  .psimage5 { background-image: url('ps-img/spimg5.webp'); transform: rotate(-4deg); z-index: 5; }
+  .psimage6 { background-image: url('ps-img/spimg6.webp'); transform: rotate(3deg); z-index: 6; }
+
+  /* Hover effect */
+  .psimage:hover {
+    transform: rotate(0deg) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  /* Entry animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .personal-section-image-container {
+      gap: 0.5rem;
+    }
+    .psimage {
+      width: 45vw;
+      height: 60vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .personal-section-image-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .psimage {
+      width: 80vw;
+      height: 100vw;
+    }
+  }
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+/* CTA Buttons Container */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
+.arrow-rigt-side{
+  color: rgb(250, 250, 250);
+  rotate: -40deg;
+}
+/* Simple CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: #6b46c1;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 300ms ease;
+}
+
+.cta-button:hover {
+  background: #553c9a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(107, 70, 193, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+    text-align: left; /* Align content to left on mobile */
+  background: #EAEEF6;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    text-align: left;
+  }
+  
+  /* Mobile: Hide original title and show mobile version */
+  .hero-title {
+    display: none;
+  }
+  
+  .hero-title-mobile {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    text-align: left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .cta-button {
+    width: auto;
+    max-width: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  /* Different style for resume button on mobile */
+  .resume-btn {
+    background: transparent !important;
+    border: 1.5px solid #6b46c1 !important;
+    color: #6b46c1 !important;
+  }
+  
+  .resume-btn:hover {
+    background: #6b46c1 !important;
+    color: white !important;
+  }
+}
+
+/* Dark mode glass background only on mobile */
+@media (max-width: 768px) {
+  body.dark-mode .hero-content {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+/* *{
+  border: 2px solid green;
+} */
+
+/* Personal Images  */
+
+.personal-section-image-container{
+  width: 80vw;
+  height: 50vh;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  margin-left: 10%;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.personal-section-image-container div{
+  width: 13rem;
+  
+  height: 40%; margin-left: -40px;
+  background-color: white ;
+  border-radius: 20px;
+  
+}
+/* Personal Section Image Frames */
+.personal-section-image-container div {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.246);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid rgb(255, 255, 255);
+  border-bottom: 30px solid rgb(255, 255, 255);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s;
+  /* All frames default to stacked position */
+  transform: translateX(-60px) rotate(-15deg);
+}
+.psimage4:hover, .psimage5:hover, .psimage6:hover {
+  transform: rotate(10deg) translateX(-60px) scale(1.08);
+  
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+.psimage1:hover, .psimage2:hover, .psimage3:hover {
+  transform: rotate(10deg) translateX(-60px) scale(1.08);
+  
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+.psimage1 {
+  background: url('ps-img/spimg1.webp') center/cover no-repeat;
+  z-index: 1;
+  transform: translateX(-60px) rotate(-15deg);
+}
+.psimage2 {
+  background: url('ps-img/spimg2.webp') left/cover no-repeat;
+  z-index: 2;
+  transform: translateX(-60px) rotate(-15deg);
+}
+.psimage3 {
+  background: url('ps-img/spimg1.webp') center/cover no-repeat;
+  z-index: 3;
+  transform: translateX(-60px) rotate(-15deg);
+}
+.psimage4 {
+  background: url('ps-img/spimg1.webp') ;
+  z-index: 4;
+  transform: translateX(-60px) rotate(-15deg);
+  background-size:cover;
+}
+.psimage5 {
+  background: url('ps-img/spimg1.webp') center/cover no-repeat;
+  z-index: 5;
+  transform: translateX(-60px) rotate(-15deg);
+}
+.psimage6 {
+  background: url('ps-img/spimg1.webp') center/cover no-repeat;
+  z-index: 6;
+  transform: translateX(-60px) rotate(-15deg);
+}
+
+.psimage1 {
+  background: url('ps-img/spimg1.webp') center/cover no-repeat;
+
+} 
+.psimage2 {
+  background: url('ps-img/spimg2.webp') center/cover no-repeat;
+
+}
+.psimage3 {
+  background: url('ps-img/spimg3.webp') center/cover no-repeat;
+}
+.psimage4 {
+  background: url('ps-img/spimg4.webp') center/cover no-repeat;
+}
+.psimage5 {
+  background: url('ps-img/spimg5.webp') center/cover no-repeat;
+}
+.psimage6 {
+  background: url('ps-img/spimg6.webp') center/cover no-repeat;
+}
+@media (max-width: 900px) {
+  .personal-section-image-container {
+    flex-wrap: wrap;
+    height: auto;
+    width: 100vw;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .personal-section-image-container div {
+    width: 45vw;
+    height: 30vw;
+    margin: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .personal-section-image-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+  }
+  .personal-section-image-container div {
+    width: 80vw;
+    height: 40vw;
+    margin: 8px 0;
+  }
+}
+
+
+
+
+/* 
+*{
+  border: 2px solid green;
+} */
+ @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Shadows+Into+Light&display=swap');
+
+/* basic layout + look */
+.footer-parallax {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 8em;
+}
+
+/* Floating footer items */
+.footer-floating {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatFooter 7s ease-in-out infinite;
+}
+.footer-float1 {
+  width: 48px; height: 48px; background: linear-gradient(135deg,#E9B8FF,#6a778e); top: 18%; left: 8%; animation-delay: 0s;
+}
+.footer-float2 {
+  width: 32px; height: 32px; background: linear-gradient(135deg,#FFD9A0,#FFF5F1); top: 60%; left: 15%; animation-delay: 1.5s;
+}
+.footer-float3 {
+  width: 40px; height: 40px; background: linear-gradient(135deg,#6a778e,#EAEEF6); top: 35%; right: 10%; animation-delay: 3s;
+}
+.footer-float4 {
+  width: 44px; height: 44px; background: #222; display: flex; align-items: center; justify-content: center; top: 70%; right: 18%; animation-delay: 2s; color: #FFD9A0;
+}
+.footer-float5 {
+  width: 36px; height: 36px; background: #E9B8FF; display: flex; align-items: center; justify-content: center; top: 15%; right: 25%; animation-delay: 4s; color: #FFF5F1;
+}
+
+@keyframes floatFooter {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-30px) scale(1.1); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.7; }
+}
+}
+
+/* floating purple dot (base transform preserved in JS) */
+
+
+/* footer structure */
+.footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* parallax wrapper - transforms are applied here */
+.parallax-wrap {
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+/* inner content (hover transforms live here so they don't conflict) */
+.parallax-text {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.14;
+  margin: 0 0 1rem 0;
+}
+
+.cta-btn {
+  margin: 5% 0%;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.cta-btn:hover {  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+background-color: red;
+transition: 0.4s ease-in-out;
+color: white; }
+
+/* socials */
+
+
+/* note on right */
+.parallax-note { font-style: italic; font-size: 1rem; opacity: .85; transform: rotate(-3deg); text-align:right;
+color: grey; 
+font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .footer { flex-direction: column; gap: 2.5rem; padding: 3.5rem 6vw; }
+  .parallax-text { font-size: 2rem; }
+  .footer-right { align-self: flex-start; }
+}

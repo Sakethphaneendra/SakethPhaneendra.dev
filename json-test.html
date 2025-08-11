@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Test</title>
+</head>
+<body>
+    <h1>JSON File Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testJSONFiles() {
+            const files = [
+                'Notification-[remix].json',
+                'Notification-[remix] (1).json',
+                'Message 1.json'
+            ];
+            
+            const results = document.getElementById('results');
+            results.innerHTML = '<h2>Testing JSON Files...</h2>';
+            
+            for (const file of files) {
+                try {
+                    console.log(`Testing ${file}...`);
+                    const response = await fetch(file);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    const text = await response.text();
+                    console.log(`${file} size: ${text.length} characters`);
+                    
+                    const json = JSON.parse(text);
+                    
+                    results.innerHTML += `
+                        <div style="margin: 10px; padding: 10px; border: 2px solid green; background: #e8f5e8;">
+                            <h3>✅ ${file}</h3>
+                            <p>Size: ${text.length} characters</p>
+                            <p>Valid JSON with ${Object.keys(json).length} top-level properties</p>
+                            <p>Version: ${json.v || 'Unknown'}</p>
+                            <p>Width: ${json.w || 'Unknown'} Height: ${json.h || 'Unknown'}</p>
+                        </div>
+                    `;
+                    
+                } catch (error) {
+                    console.error(`${file} failed:`, error);
+                    results.innerHTML += `
+                        <div style="margin: 10px; padding: 10px; border: 2px solid red; background: #ffe8e8;">
+                            <h3>❌ ${file}</h3>
+                            <p>Error: ${error.message}</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Run test when page loads
+        testJSONFiles();
+    </script>
+</body>
+</html>
